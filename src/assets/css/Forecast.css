@@ -1,0 +1,76 @@
+/* Forecast.css */
+.forecast-group {
+  margin-bottom: 20px;
+}
+
+.forecast-row {
+  display: flex;
+  overflow-x: auto;
+}
+
+.forcast-c {
+  min-width: 9rem;
+  max-width: 10rem;
+  margin: 4px;
+  padding: 3px;
+  position: relative;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  background-size: cover;
+  padding-bottom: 6rem;
+}
+
+
+
+/* Set the default background image */
+.forecast-card::before {
+  border-radius: 2rem;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  z-index: -2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.forecast-card[data-weather="Clear"]::before {
+  background-image: url("https://raymus97.files.wordpress.com/2014/12/img_7830.jpg");
+}
+
+.forecast-card[data-weather="Clouds"]::before {
+  background-image: url("https://wallpapers.com/images/featured/clouds-6swlqte8g6dniemk.jpg");
+}
+.forecast-card[data-weather="Thunderstorm"]::before {
+  background-image: url("https://images.unsplash.com/photo-1600377927594-ceae8f8981a6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+.forecast-card[data-weather="Drizzle"]::before {
+  background-image: url("https://images.unsplash.com/photo-1508873760731-9c3d0bb6b961?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+.forecast-card[data-weather="Rain"]::before {
+  background-image: url("https://img.freepik.com/free-photo/weather-effects-composition_23-2149853295.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1705104000&semt=sph");
+}
+.forecast-card[data-weather="Snow"]::before {
+  background-image: url("https://images.unsplash.com/photo-1482597869166-609e91429f40?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+.forecast-card:not([data-weather])::before,
+.forecast-card[data-weather="default"]::before {
+  background-image: url("https://images.unsplash.com/photo-1525891618908-24765267dab7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.desc{
+  padding: 3px;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,62 @@
+.container {
+    position: relative;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    background-size: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 300px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1; 
+  }
+  
+  /* Set the default background image */
+  .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 300px;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  
+  /* Define the background images based on the weather condition */
+  .container[data-weather="Clear"]::before {
+    background-image: url('https://raymus97.files.wordpress.com/2014/12/img_7830.jpg');
+  }
+  
+  .container[data-weather="Clouds"]::before {
+    background-image: url('https://wallpapers.com/images/featured/clouds-6swlqte8g6dniemk.jpg');
+  }
+  .container[data-weather="Thunderstorm"]::before {
+    background-image: url('https://images.unsplash.com/photo-1600377927594-ceae8f8981a6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+  .container[data-weather="Drizzle"]::before {
+    background-image: url('https://images.unsplash.com/photo-1508873760731-9c3d0bb6b961?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+  .container[data-weather="Rain"]::before {
+    background-image: url('https://img.freepik.com/free-photo/weather-effects-composition_23-2149853295.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1705104000&semt=sph');
+  }
+  .container[data-weather="Snow"]::before {
+    background-image: url('https://images.unsplash.com/photo-1482597869166-609e91429f40?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  }
+  .container:not([data-weather])::before,
+  .container[data-weather="default"]::before {
+    background-image: url('https://images.unsplash.com/photo-1525891618908-24765267dab7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+  }
+
+.decs-title{
+  color: rgb(206, 255, 239);
+  font-size: 2rem;
+}
