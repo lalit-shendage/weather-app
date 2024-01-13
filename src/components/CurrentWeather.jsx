@@ -28,8 +28,7 @@ const CurrentWeather = ({ weatherData }) => {
         Wind: {Math.round(weatherData.wind.speed * 3.6)} km/hr from {" "}
         {convertDegreesToDirection(weatherData.wind.deg)}
       </p>
-      <p>{weatherCondition}</p>
-     
+          
     </div>
   );
 };

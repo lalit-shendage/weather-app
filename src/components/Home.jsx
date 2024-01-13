@@ -3,17 +3,21 @@ import React, { useState } from 'react';
 import CurrentWeather from './CurrentWeather'; 
 import Forecast from './Forecast';
 
+require('dotenv').config();
+
 const Home = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
   const [showFiveDayForecast, setShowFiveDayForecast] = useState(false); 
 
-  const apiKey = 'b16d4f5818f83cb35e462778de96e8d4';
+
+  const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
+
 
   const handleSearch = async () => {
     try {
-      const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&timezone=19800`);
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&timezone=19800`);
       const data = await response.json();
 
       if (response.ok) {

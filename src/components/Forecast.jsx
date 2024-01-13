@@ -8,7 +8,7 @@ const Forecast = ({ city, apiKey }) => {
   useEffect(() => {
     const fetchForecastData = async () => {
       try {
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`);
         const data = await response.json();
         console.log(data)
         if (response.ok) {
