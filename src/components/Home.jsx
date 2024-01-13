@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import CurrentWeather from './CurrentWeather'; 
 import Forecast from './Forecast';
 
-require('dotenv').config();
+
 
 const Home = () => {
   const [city, setCity] = useState('');
@@ -11,9 +11,7 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [showFiveDayForecast, setShowFiveDayForecast] = useState(false); 
 
-
-  const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
-
+  const apiKey = 'b16d4f5818f83cb35e462778de96e8d4';
 
   const handleSearch = async () => {
     try {
